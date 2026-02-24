@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:personal_finance/accounts/pages/accounts_page.dart';
 import 'package:personal_finance/config/app_theme.dart';
 import 'package:personal_finance/settings/pages/currencies_page.dart';
 import 'package:personal_finance/settings/pages/expenses_type_page.dart';
@@ -137,7 +136,7 @@ class _SettingsPageState extends State<SettingsPage> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                const Icon(
+                                Icon(
                                   MdiIcons.bank,
                                   size: 30,
                                 )

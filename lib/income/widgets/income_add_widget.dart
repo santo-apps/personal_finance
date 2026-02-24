@@ -1,5 +1,6 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+
 import 'package:intl/intl.dart';
 import 'package:personal_finance/income/pages/income_page.dart';
 
@@ -52,6 +53,9 @@ class IncomeAddWidgetState extends State<IncomeAddWidget> {
   List<DropdownMenuItem<String>> incomeTypesDropdownItems = [];
   List<DropdownMenuItem<String>> currenciesDropdownItems = [];
   List<DropdownMenuItem<String>> accountsDropdownItems = [];
+
+  final EasyInfiniteDateTimelineController dTController =
+      EasyInfiniteDateTimelineController();
 
   @override
   void didChangeDependencies() {
@@ -290,7 +294,18 @@ class IncomeAddWidgetState extends State<IncomeAddWidget> {
                               disabledBorder: InputBorder.none,
                             ),
                             readOnly: true,
-                            onTap: () => DatePicker.showDatePicker(
+                            onTap: () => EasyInfiniteDateTimeLine(
+                              controller: dTController,
+                              firstDate: DateTime.now(),
+                              focusDate: incomeDate,
+                              lastDate: DateTime(2100, 12, 31),
+                              onDateChange: (selectedDate) {
+                                setState(() {
+                                  incomeDate = selectedDate;
+                                });
+                              },
+                            ),
+                            /*       DatePicker.showDatePicker(
                               context,
                               maxTime: maxTime(),
                               showTitleActions: true,
@@ -301,7 +316,7 @@ class IncomeAddWidgetState extends State<IncomeAddWidget> {
                                 });
                               },
                               currentTime: DateTime.now(),
-                            ),
+                            ), */
                           ),
                         ),
 

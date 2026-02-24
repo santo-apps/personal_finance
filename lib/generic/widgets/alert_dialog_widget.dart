@@ -4,7 +4,7 @@ import '../../config/app_strings.dart';
 
 class AlertDialogWidget extends StatefulWidget {
   final error, navigateBackPage;
-  AlertDialogWidget(this.error, this.navigateBackPage);
+  const AlertDialogWidget(this.error, this.navigateBackPage, {super.key});
   @override
   _AlertDialogWidgetState createState() => _AlertDialogWidgetState();
 }

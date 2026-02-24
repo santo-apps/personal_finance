@@ -8,11 +8,12 @@ class CustomRaisedButton extends StatelessWidget {
   final double? elevation;
   final VoidCallback? onPressed;
 
-  CustomRaisedButton({
+  const CustomRaisedButton({
+    super.key,
     this.child,
     this.color,
-    this.borderRadius: 2.0,
-    this.height: 50.0,
+    this.borderRadius = 2.0,
+    this.height = 50.0,
     this.elevation,
     this.onPressed,
   });
@@ -26,15 +27,17 @@ class CustomRaisedButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           elevation: elevation,
-          onSurface: color, //disabledColor: color,
+          disabledForegroundColor: color!.withOpacity(0.38),
+          disabledBackgroundColor:
+              color!.withOpacity(0.12), //disabledColor: color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.circular(borderRadius),
             ),
           ),
         ),
-        child: child,
         onPressed: onPressed,
+        child: child,
       ),
     );
   }

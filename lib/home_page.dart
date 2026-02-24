@@ -150,7 +150,7 @@ class _HomePageState extends State<HomePage> {
               // animatedIcon: AnimatedIcons.menu_close,
               children: [
                 SpeedDialChild(
-                  child: const Icon(
+                  child: Icon(
                     MdiIcons.cashRegister,
                   ),
                   label: appStrings['expenses'],
@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SpeedDialChild(
-                  child: const Icon(
+                  child: Icon(
                     MdiIcons.bankTransfer,
                   ),
                   label: appStrings['income'],
@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SpeedDialChild(
-                  child: const Icon(
+                  child: Icon(
                     MdiIcons.timer,
                   ),
                   label: appStrings['goals'],
@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SpeedDialChild(
-                  child: const Icon(
+                  child: Icon(
                     MdiIcons.cashMultiple,
                   ),
                   label: appStrings['budgets'],
@@ -202,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 SpeedDialChild(
-                  child: const Icon(
+                  child: Icon(
                     MdiIcons.bankTransfer,
                   ),
                   label: appStrings['accounts'],

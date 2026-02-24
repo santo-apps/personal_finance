@@ -1,5 +1,6 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+//import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:personal_finance/expenses/pages/expenses_page.dart';
 import 'package:personal_finance/settings/models/expenses_type_model.dart';
@@ -52,6 +53,9 @@ class ExpenseAddWidgetState extends State<ExpenseAddWidget> {
   List<DropdownMenuItem<String>> expenseTypesDropdownItems = [];
   List<DropdownMenuItem<String>> currenciesDropdownItems = [];
   List<DropdownMenuItem<String>> accountsDropdownItems = [];
+
+  final EasyInfiniteDateTimelineController dTController =
+      EasyInfiniteDateTimelineController();
 
   @override
   void didChangeDependencies() {
@@ -308,7 +312,19 @@ class ExpenseAddWidgetState extends State<ExpenseAddWidget> {
                               disabledBorder: InputBorder.none,
                             ),
                             readOnly: true,
-                            onTap: () => DatePicker.showDatePicker(
+                            onTap: () => EasyInfiniteDateTimeLine(
+                              controller: dTController,
+                              firstDate: DateTime.now(),
+                              focusDate: expenseDate,
+                              lastDate: DateTime(2100, 12, 31),
+                              onDateChange: (selectedDate) {
+                                setState(() {
+                                  expenseDate = selectedDate;
+                                });
+                              },
+                            ),
+
+                            /*   DatePicker.showDatePicker(
                               context,
                               maxTime: maxTime(),
                               showTitleActions: true,
@@ -319,7 +335,7 @@ class ExpenseAddWidgetState extends State<ExpenseAddWidget> {
                                 });
                               },
                               currentTime: DateTime.now(),
-                            ),
+                            ), */
                           ),
                         ),
 

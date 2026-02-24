@@ -125,47 +125,47 @@ ThemeData appDarkTheme() => ThemeData(
         ),
       ),
       textTheme: TextTheme(
-        headline3: GoogleFonts.montserrat(
+        displaySmall: GoogleFonts.montserrat(
           fontSize: 42.0,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-        headline4: GoogleFonts.montserrat(
+        headlineMedium: GoogleFonts.montserrat(
           fontSize: 25.0,
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-        headline5: GoogleFonts.montserrat(
+        headlineSmall: GoogleFonts.montserrat(
           fontSize: 24.0,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
-        headline6: GoogleFonts.montserrat(
+        titleLarge: GoogleFonts.montserrat(
           fontSize: 20.0,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
-        subtitle1: GoogleFonts.montserrat(
+        titleMedium: GoogleFonts.montserrat(
           fontSize: 16.0,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
-        subtitle2: GoogleFonts.montserrat(
+        titleSmall: GoogleFonts.montserrat(
           fontSize: 14.0,
           fontWeight: FontWeight.w500,
           color: Colors.white,
         ),
-        bodyText1: GoogleFonts.montserrat(
+        bodyLarge: GoogleFonts.montserrat(
           fontSize: 15.0,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
-        bodyText2: GoogleFonts.montserrat(
+        bodyMedium: GoogleFonts.montserrat(
           fontSize: 12.0,
           fontWeight: FontWeight.w400,
           color: Colors.white,
         ),
-        button: GoogleFonts.montserrat(
+        labelLarge: GoogleFonts.montserrat(
           fontSize: 16.0,
           fontWeight: FontWeight.w500,
           color: Colors.white,

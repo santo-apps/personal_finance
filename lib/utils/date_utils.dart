@@ -3,21 +3,19 @@ import 'package:intl/intl.dart';
 class DateUtil {
   static String getStringDate(DateTime date, String lang) {
     var now = DateTime.now();
-    var returnVal;
     if (now.year == date.year &&
         now.month == date.month &&
         now.day == date.day) {
-      if (lang == "en") {
-        returnVal = "Today";
+      switch (lang) {
+        case "en":
+          return "Today";
+        case "es":
+          return "Este Día";
+        case "fr":
+          return "Aujourd'hui";
+        default:
+          return "";
       }
-      if (lang == "es") {
-        returnVal = "Este Día";
-      }
-      if (lang == "fr") {
-        returnVal = "Aujourd'hui";
-      }
-      return returnVal;
-      //lang == "en" ?  : "Hoy";
     }
     var formatter = DateFormat('EEE, dd MMM yyyy');
     String formattedDate = formatter.format(date);

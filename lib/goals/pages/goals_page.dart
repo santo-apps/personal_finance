@@ -126,7 +126,7 @@ class _GoalsPageState extends State<GoalsPage> {
               iconTheme: const IconThemeData(color: Colors.black),
             ),
             body: GoalsWidget(appStrings, lang),
-            bottomNavigationBar: BottomNavBarWidget(2, 2),
+            bottomNavigationBar: const BottomNavBarWidget(2, 2),
             floatingActionButton: FloatingActionButton(
               onPressed: () => Navigator.of(context)
                   .pushNamed(GoalsAddPage.routeName, arguments: {

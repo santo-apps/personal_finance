@@ -76,7 +76,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
 
   @override
   Widget build(BuildContext context) {
-    void _tabPress(int position) {
+    void tabPress(int position) {
       if (position == 0 && widget.currentPosition != 0) {
         Navigator.of(context).pushReplacementNamed(HomePage.routeName);
       } else if (position == 1 && widget.currentPosition != 1) {
@@ -121,7 +121,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
           //TextStyle(fontSize: 15, fontFamily: 'Roboto'),
           unselectedLabelStyle: GoogleFonts.montserrat(fontSize: 13), */
 
-            onTap: (indexVal) => _tabPress(indexVal),
+            onTap: (indexVal) => tabPress(indexVal),
             items: [
               BottomNavigationBarItem(
                 activeIcon: const Icon(
@@ -138,7 +138,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                 label: appStrings['home'],
               ),
               BottomNavigationBarItem(
-                activeIcon: const Icon(
+                activeIcon: Icon(
                   MdiIcons.cashRegister,
                   size: 30.0,
                   color: Colors.black,
@@ -152,7 +152,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                 label: appStrings['transactions'],
               ),
               BottomNavigationBarItem(
-                activeIcon: const Icon(
+                activeIcon: Icon(
                   MdiIcons.timer,
                   size: 30.0,
                   color: Colors.black,
@@ -170,7 +170,7 @@ class _BottomNavBarWidgetState extends State<BottomNavBarWidget> {
                     /*   const ImageIcon(
                   AssetImage("assets/community/community.png"),
                 ), */
-                    const Icon(
+                    Icon(
                   MdiIcons.cashMultiple,
                   size: 30.0,
                   color: Colors.black,

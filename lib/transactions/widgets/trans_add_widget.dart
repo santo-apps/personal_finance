@@ -1,5 +1,6 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+//import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 
 import 'package:personal_finance/settings/providers/currencies_provider.dart';
@@ -56,6 +57,9 @@ class TransAddWidgetState extends State<TransAddWidget> {
   List<DropdownMenuItem<String>> transTypesDropdownItems = [];
   List<DropdownMenuItem<String>> currenciesDropdownItems = [];
   List<DropdownMenuItem<String>> accountsDropdownItems = [];
+
+  final EasyInfiniteDateTimelineController dTController =
+      EasyInfiniteDateTimelineController();
 
   @override
   void didChangeDependencies() {
@@ -306,7 +310,18 @@ class TransAddWidgetState extends State<TransAddWidget> {
                               disabledBorder: InputBorder.none,
                             ),
                             readOnly: true,
-                            onTap: () => DatePicker.showDatePicker(
+                            onTap: () => EasyInfiniteDateTimeLine(
+                              controller: dTController,
+                              firstDate: DateTime.now(),
+                              focusDate: transDate,
+                              lastDate: DateTime(2100, 12, 31),
+                              onDateChange: (selectedDate) {
+                                setState(() {
+                                  transDate = selectedDate;
+                                });
+                              },
+                            ),
+                            /*  DatePicker.showDatePicker(
                               context,
                               maxTime: maxTime(),
                               showTitleActions: true,
@@ -317,7 +332,7 @@ class TransAddWidgetState extends State<TransAddWidget> {
                                 });
                               },
                               currentTime: DateTime.now(),
-                            ),
+                            ), */
                           ),
                         ),
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:personal_finance/generic/widgets/drawer_widget.dart';
-import 'package:personal_finance/income/providers/income_provider.dart';
 import 'package:personal_finance/config/app_config.dart';
 import 'package:personal_finance/config/app_strings.dart';
 import 'package:personal_finance/lang/providers/english_string_provider.dart';

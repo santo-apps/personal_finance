@@ -1,5 +1,6 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+//import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:personal_finance/goals/models/goals_model.dart';
@@ -34,6 +35,9 @@ class GoalsDepositPageState extends State<GoalsDepositPage> {
   DateTime depositDate = DateTime.now();
 
   late GoalsModel goalDetails;
+
+  final EasyInfiniteDateTimelineController dTController =
+      EasyInfiniteDateTimelineController();
 
   @override
   void didChangeDependencies() {
@@ -398,7 +402,18 @@ class GoalsDepositPageState extends State<GoalsDepositPage> {
                                 disabledBorder: InputBorder.none,
                               ),
                               readOnly: true,
-                              onTap: () => DatePicker.showDatePicker(
+                              onTap: () => EasyInfiniteDateTimeLine(
+                                controller: dTController,
+                                firstDate: DateTime.now(),
+                                focusDate: depositDate,
+                                lastDate: DateTime(2100, 12, 31),
+                                onDateChange: (selectedDate) {
+                                  setState(() {
+                                    depositDate = selectedDate;
+                                  });
+                                },
+                              ),
+                              /*  DatePicker.showDatePicker(
                                 context,
                                 showTitleActions: true,
                                 onChanged: (date) {},
@@ -408,7 +423,7 @@ class GoalsDepositPageState extends State<GoalsDepositPage> {
                                   });
                                 },
                                 currentTime: DateTime.now(),
-                              ),
+                              ),*/
                             ),
                           ),
                           const SizedBox(

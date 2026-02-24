@@ -1,5 +1,6 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+//import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:personal_finance/settings/models/currencies_model.dart';
 import 'package:personal_finance/goals/pages/goals_page.dart';
@@ -33,6 +34,9 @@ class _GoalsAddPageState extends State<GoalsAddPage> {
   double achievedAmount = 0.0;
   double achievedPercent = 0.0;
   List<CurrenciesModel> currenciesList = [];
+
+  final EasyInfiniteDateTimelineController dTController =
+      EasyInfiniteDateTimelineController();
 
   @override
   void didChangeDependencies() {
@@ -299,7 +303,19 @@ class _GoalsAddPageState extends State<GoalsAddPage> {
                                 disabledBorder: InputBorder.none,
                               ),
                               readOnly: true,
-                              onTap: () => DatePicker.showDatePicker(
+                              onTap: () => EasyInfiniteDateTimeLine(
+                                controller: dTController,
+                                selectionMode: const SelectionMode.autoCenter(),
+                                firstDate: DateTime.now(),
+                                focusDate: goalStartDate,
+                                lastDate: DateTime(2100, 12, 31),
+                                onDateChange: (selectedDate) {
+                                  setState(() {
+                                    goalStartDate = selectedDate;
+                                  });
+                                },
+                              ),
+                              /*  DatePicker.showDatePicker(
                                 context,
                                 maxTime: maxTime(),
                                 showTitleActions: true,
@@ -310,7 +326,7 @@ class _GoalsAddPageState extends State<GoalsAddPage> {
                                   });
                                 },
                                 currentTime: DateTime.now(),
-                              ),
+                              ), */
                             ),
                           ),
 
@@ -348,7 +364,18 @@ class _GoalsAddPageState extends State<GoalsAddPage> {
                                 disabledBorder: InputBorder.none,
                               ),
                               readOnly: true,
-                              onTap: () => DatePicker.showDatePicker(
+                              onTap: () => EasyInfiniteDateTimeLine(
+                                controller: dTController,
+                                firstDate: DateTime.now(),
+                                focusDate: goalEndDate,
+                                lastDate: DateTime(2100, 12, 31),
+                                onDateChange: (selectedDate) {
+                                  setState(() {
+                                    goalEndDate = selectedDate;
+                                  });
+                                },
+                              ),
+                              /*  DatePicker.showDatePicker(
                                 context,
                                 maxTime: maxTime(),
                                 showTitleActions: true,
@@ -359,7 +386,7 @@ class _GoalsAddPageState extends State<GoalsAddPage> {
                                   });
                                 },
                                 currentTime: DateTime.now(),
-                              ),
+                              ), */
                             ),
                           ),
 

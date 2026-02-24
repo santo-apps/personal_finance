@@ -12,7 +12,7 @@ import '../../lang/providers/language_provider.dart';
 //import 'package:shared_preferences/shared_preferences.dart';
 
 class DrawerWidget extends StatefulWidget {
-  const DrawerWidget({Key? key}) : super(key: key);
+  const DrawerWidget({super.key});
 
   @override
   State<DrawerWidget> createState() => _DrawerWidgetState();
@@ -121,9 +121,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 MdiIcons.bank,
-                                color: Color(
+                                color: const Color(
                                   AppConfig.blueColor,
                                 ),
                               ),
@@ -146,9 +146,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 MdiIcons.bankTransferIn,
-                                color: Color(
+                                color: const Color(
                                   AppConfig.blueColor,
                                 ),
                               ),
@@ -170,17 +170,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         child: Container(
                           margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Row(
-                            children: const [
+                            children: [
                               Icon(
                                 MdiIcons.cartOutline,
-                                color: Color(
+                                color: const Color(
                                   AppConfig.blueColor,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text('Orders'),
+                              const Text('Orders'),
                             ],
                           ),
                         ),
@@ -191,17 +191,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       Container(
                         margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Row(
-                          children: const [
+                          children: [
                             Icon(
                               MdiIcons.phoneOutline,
-                              color: Color(
+                              color: const Color(
                                 AppConfig.blueColor,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text('Contact Support'),
+                            const Text('Contact Support'),
                           ],
                         ),
                       ),
@@ -211,17 +211,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       Container(
                         margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Row(
-                          children: const [
+                          children: [
                             Icon(
                               MdiIcons.whatsapp,
-                              color: Color(
+                              color: const Color(
                                 AppConfig.blueColor,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text('Whatsapp'),
+                            const Text('Whatsapp'),
                           ],
                         ),
                       ),
@@ -231,17 +231,17 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                       Container(
                         margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                         child: Row(
-                          children: const [
+                          children: [
                             Icon(
                               MdiIcons.informationOutline,
-                              color: Color(
+                              color: const Color(
                                 AppConfig.blueColor,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
-                            Text('About'),
+                            const Text('About'),
                           ],
                         ),
                       ),
@@ -259,9 +259,9 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                           margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                           child: Row(
                             children: [
-                              const Icon(
+                              Icon(
                                 MdiIcons.apps,
-                                color: Color(
+                                color: const Color(
                                   AppConfig.blueColor,
                                 ),
                               ),
@@ -288,25 +288,25 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                         children: [
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(
+                            icon: Icon(
                               MdiIcons.facebook,
-                              color: Color(AppConfig.blueColor),
+                              color: const Color(AppConfig.blueColor),
                               size: 30,
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(
+                            icon: Icon(
                               MdiIcons.instagram,
-                              color: Color(AppConfig.blueColor),
+                              color: const Color(AppConfig.blueColor),
                               size: 30,
                             ),
                           ),
                           IconButton(
                             onPressed: () {},
-                            icon: const Icon(
+                            icon: Icon(
                               MdiIcons.youtube,
-                              color: Color(AppConfig.blueColor),
+                              color: const Color(AppConfig.blueColor),
                               size: 30,
                             ),
                           ),
