@@ -4,6 +4,7 @@ import 'custom_raised_button_widget.dart';
 
 class FormSubmitButtonWidget extends CustomRaisedButton {
   FormSubmitButtonWidget({
+    super.key,
     @required String? title,
     super.borderRadius = 10.0,
     super.onPressed,

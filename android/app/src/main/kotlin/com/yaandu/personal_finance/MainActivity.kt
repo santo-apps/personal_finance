@@ -1,4 +1,4 @@
-package com.ht.personal_finance
+package com.yaandu.personal_finance
 
 import io.flutter.embedding.android.FlutterActivity
 

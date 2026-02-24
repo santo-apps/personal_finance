@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:personal_finance/budgets/pages/budgets_page.dart';
-import 'package:personal_finance/expenses/pages/expenses_page.dart';
 import 'package:personal_finance/goals/pages/goals_page.dart';
 import 'package:personal_finance/home_page.dart';
 import 'package:personal_finance/transactions/pages/trans_page.dart';
